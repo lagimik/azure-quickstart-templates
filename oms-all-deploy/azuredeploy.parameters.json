@@ -6,19 +6,19 @@
             "value": "QuickStartOMSVault"
         },
         "omsRecoveryVaultRegion": {
-            "value": "EastUS"
+            "value": "East US"
         },
         "omsWorkspaceName": {
             "value": "QuickStartOMS"
         },
         "omsWorkspaceRegion": {
-            "value": "EastUS"
+            "value": "East US"
         },
         "omsAutomationAccountName": {
             "value": "QuickStartOMSAutomation"
         },
         "omsAutomationRegion": {
-            "value": "USEast    "
+            "value": "East US 2"
         },
         "azureAdminPwd": {
             "value": "GEN-PASSWORD"
