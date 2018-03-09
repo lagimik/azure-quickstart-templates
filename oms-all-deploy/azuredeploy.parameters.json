@@ -3,22 +3,22 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "omsRecoveryVaultName": {
-            "value": "GEN-UNIQUE-10"
+            "value": "QuickStartOMSVault"
         },
         "omsRecoveryVaultRegion": {
-            "value": "West Europe"
+            "value": "EastUS"
         },
         "omsWorkspaceName": {
-            "value": "GEN-UNIQUE-20"
+            "value": "QuickStartOMS"
         },
         "omsWorkspaceRegion": {
-            "value": "West Europe"
+            "value": "EastUS"
         },
         "omsAutomationAccountName": {
-            "value": "GEN-UNIQUE-30"
+            "value": "QuickStartOMSAutomation"
         },
         "omsAutomationRegion": {
-            "value": "West Europe"
+            "value": "USEast    "
         },
         "azureAdminPwd": {
             "value": "GEN-PASSWORD"
@@ -27,7 +27,7 @@
             "value": "azureadmin"
         },
         "_artifactsLocation": {
-            "value": "https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/oms-all-deploy"
+            "value": "https://raw.githubusercontent.com/lagimik/azure-quickstart-templates/master/oms-all-deploy"
         }
     }
 }
