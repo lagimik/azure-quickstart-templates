@@ -327,8 +327,7 @@
               }
             ]
           },
-          "extensionProfile": {
-            
+          "extensionProfile": {     
             "extensions": [
               {
                 "name": "Microsoft.Powershell.DSC",
