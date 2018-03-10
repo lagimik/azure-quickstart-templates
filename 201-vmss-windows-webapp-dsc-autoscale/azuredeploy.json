@@ -143,6 +143,19 @@
     "powershelldscArchiveFileName": "IISInstall.ps1.zip"
   },
   "resources": [
+    {
+      "name": "[parameters('storageAccountName')]",
+      "type": "Microsoft.Storage/storageAccounts",
+      "apiVersion": "2016-01-01",
+      "sku": {
+        "name": "Standard_LRS"
+      },
+      "kind": "Storage",
+      "location": "South Central US",
+      "tags": {},
+      "properties": {}
+    },
+
 
     {
       "type": "Microsoft.Network/virtualNetworks",
