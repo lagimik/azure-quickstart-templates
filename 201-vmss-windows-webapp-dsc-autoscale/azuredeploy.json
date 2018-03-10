@@ -305,10 +305,10 @@
                     "typeHandlerVersion": "1.0",
                     "autoUpgradeMinorVersion": true,
                     "settings": {
-                        "workspaceId": "[parameters('WorkSpaceId')]"
+                        "workspaceId": "[parameters('omsWorkSpaceId')]"
                     },
                     "protectedSettings": {
-                        "workspaceKey": "[parameters('WorkSpaceKey')]"
+                        "workspaceKey": "[parameters('omsWorkSpaceKey')]"
                     }
                   }
                 },{
