@@ -109,7 +109,7 @@
     }
   },
   "variables": {
-    "apiVersion": "2015-05-01",
+    "apiVersion": "2017-06-01",
     "namingInfix": "[toLower(substring(concat(parameters('vmssName'), uniqueString(resourceGroup().id)), 0, 9))]",
     "longNamingInfix": "[toLower(parameters('vmssName'))]",
     "addressPrefix": "10.0.0.0/16",
@@ -140,7 +140,7 @@
     "webDeployPackageFullPath": "[concat(parameters('_artifactsLocation'), parameters('webDeployPackage'))]",
     "powershelldscZipFullPath": "[concat(parameters('_artifactsLocation'), parameters('powershelldscZip'))]",
     "powershelldscArchiveFolder": "DSC",
-    "powershelldscArchiveFileName": "IISInstall.ps1.zip",
+    "powershelldscArchiveFileName": "IISInstall.ps1.zip"
 
     
   },
@@ -148,7 +148,7 @@
     {
       "name": "[parameters('storageAccountName')]",
       "type": "Microsoft.Storage/storageAccounts",
-      "apiVersion":  "[variables('apiVersion')]" ,
+      "apiVersion":  "2017-06-01",
       "sku": {
         "name": "Standard_LRS"
       },
@@ -163,7 +163,7 @@
       "type": "Microsoft.Network/virtualNetworks",
       "name": "[variables('virtualNetworkName')]",
       "location": "[resourceGroup().location]",
-      "apiVersion": "[variables('apiVersion')]",
+      "apiVersion": "2017-06-01",
       "properties": {
         "addressSpace": {
           "addressPrefixes": [
@@ -184,7 +184,7 @@
       "type": "Microsoft.Network/publicIPAddresses",
       "name": "[variables('publicIPAddressName')]",
       "location": "[resourceGroup().location]",
-      "apiVersion": "[variables('apiVersion')]",
+      "apiVersion": "2017-06-01",
       "properties": {
         "publicIPAllocationMethod": "Static",
         "dnsSettings": {
@@ -196,7 +196,7 @@
       "type": "Microsoft.Network/loadBalancers",
       "name": "[variables('loadBalancerName')]",
       "location": "[resourceGroup().location]",
-      "apiVersion": "[variables('apiVersion')]",
+      "apiVersion": "2016-03-30",
       "dependsOn": [
         "[concat('Microsoft.Network/publicIPAddresses/', variables('publicIPAddressName'))]"
       ],
@@ -268,7 +268,7 @@
       "type": "Microsoft.Compute/virtualMachineScaleSets",
       "name": "[variables('namingInfix')]",
       "location": "[resourceGroup().location]",
-      "apiVersion": "[variables('apiVersion')]",
+      "apiVersion": "2017-03-30",
       "dependsOn": [
         "[concat('Microsoft.Network/loadBalancers/', variables('loadBalancerName'))]",
         "[concat('Microsoft.Network/virtualNetworks/', variables('virtualNetworkName'))]"
@@ -377,7 +377,7 @@
     },
     {
       "type": "Microsoft.Insights/autoscaleSettings",
-      "apiVersion": "[variables('apiVersion')]",
+      "apiVersion": "2016-08-01",
       "name": "cpuautoscale",
       "location": "[resourceGroup().location]",
       "dependsOn": [
