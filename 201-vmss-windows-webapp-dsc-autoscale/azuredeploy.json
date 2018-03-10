@@ -332,6 +332,7 @@
               {
                 "name": "Microsoft.Powershell.DSC",
                 "apiVersion": "[variables('apiVersion')]",
+                "location": "[resourceGroup().location]",
                 "properties": {
                   "publisher": "Microsoft.Powershell",
                   "type": "DSC",
@@ -351,8 +352,7 @@
                   }
                 }
               },{
-                "type": "extensions",
-                "name": "OMSExtension",
+                "name": "Microsoft.EnterpriseCloud.Monitoring",
                 "apiVersion": "[variables('apiVersion')]",
                 "location": "[resourceGroup().location]",
                 
