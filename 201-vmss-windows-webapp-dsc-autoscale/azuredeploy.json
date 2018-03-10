@@ -326,7 +326,54 @@
                     }
                   }
                 }
+              },{
+                "type": "extensions",
+                "name": "OMSExtension",
+                "apiVersion": "[variables('apiVersion')]",
+                "location": "[resourceGroup().location]",
+                "dependsOn": [
+                    "[concat('Microsoft.Compute/virtualMachines/', variables('vmName'))]"
+                ],
+                "properties": {
+                    "publisher": "Microsoft.EnterpriseCloud.Monitoring",
+                    "type": "MicrosoftMonitoringAgent",
+                    "typeHandlerVersion": "1.0",
+                    "autoUpgradeMinorVersion": true,
+                    "settings": {
+                        "workspaceId": "[parameters('omsWorkSpaceId')]"
+                    },
+                    "protectedSettings": {
+                        "workspaceKey": "[parameters('omsWorkSpaceKey')]"
+                    }
+                  }
+                },{
+                  "name": "Microsoft.Insights.VMDiagnosticsSettings",
+                  "type": "extensions",
+                  "location": "[resourceGroup().location]",
+                  "apiVersion": "2015-06-15",
+                  "dependsOn": [
+                      "[concat('Microsoft.Compute/virtualMachines/', variables('vmName'))]"
+                  ],
+                  "tags": {
+                      "displayName": "AzureDiagnostics"
+                  },
+                  "properties": {
+                      "publisher": "Microsoft.Azure.Diagnostics",
+                      "type": "IaaSDiagnostics",
+                      "typeHandlerVersion": "1.5",
+                      "autoUpgradeMinorVersion": true,
+                      "settings": {
+                          "xmlCfg": "[base64(concat(variables('wadcfgxstart'), variables('wadmetricsresourceid'), variables('vmName'), variables('wadcfgxend')))]",
+                          "storageAccount": "[parameters('existingdiagnosticsStorageAccountName')]"
+                      },
+                      "protectedSettings": {
+                          "storageAccountName": "[parameters('existingdiagnosticsStorageAccountName')]",
+                          "storageAccountKey": "[listkeys(variables('accountid'), '2015-05-01-preview').key1]",
+                          "storageAccountEndPoint": "https://core.windows.net"
+                      }
+                  }
               }
+          
             ]
           }
         }

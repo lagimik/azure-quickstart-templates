@@ -9,7 +9,7 @@
       "value": "2016-Datacenter"
     },
     "vmssName": {
-      "value": "GEN-UNIQUE-5"
+      "value": "webVMSS"
     },
     "instanceCount": {
       "value": 3
@@ -24,7 +24,7 @@
       "value": "vmssadmin"
     },
     "adminPassword": {
-      "value": "GEN-PASSWORD"
+      "value": "MlHRpD1o7WTA20g+3LY3qbW3L/wIY+gszaGc2tOmvynuXSPgAhWnG4EUMRkHLqEa8UlnusLJ94+qlROpWUwgcQ=="
     },
     "powershelldscZip": {
       "value": "/DSC/IISInstall.ps1.zip"
