@@ -140,7 +140,9 @@
     "webDeployPackageFullPath": "[concat(parameters('_artifactsLocation'), parameters('webDeployPackage'))]",
     "powershelldscZipFullPath": "[concat(parameters('_artifactsLocation'), parameters('powershelldscZip'))]",
     "powershelldscArchiveFolder": "DSC",
-    "powershelldscArchiveFileName": "IISInstall.ps1.zip"
+    "powershelldscArchiveFileName": "IISInstall.ps1.zip",
+
+    
   },
   "resources": [
     {
@@ -329,7 +331,7 @@
             "extensions": [
               {
                 "name": "Microsoft.Powershell.DSC",
-                "apiVersion": "2017-03-30",
+                "apiVersion": "2015-05-01-preview",
                 "properties": {
                   "publisher": "Microsoft.Powershell",
                   "type": "DSC",
@@ -351,7 +353,7 @@
               },{
                 "type": "extensions",
                 "name": "OMSExtension",
-                "apiVersion": "[variables('apiVersion')]",
+                "apiVersion": "2015-05-01-preview",
                 "location": "[resourceGroup().location]",
                 
                 "properties": {
