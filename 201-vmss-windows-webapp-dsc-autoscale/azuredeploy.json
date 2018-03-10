@@ -331,7 +331,7 @@
             "extensions": [
               {
                 "name": "Microsoft.Powershell.DSC",
-                "apiVersion": "[variables('apiVersion')]",
+                "apiVersion": "2014-01-01",
                 "location": "[resourceGroup().location]",
                 "properties": {
                   "publisher": "Microsoft.Powershell",
