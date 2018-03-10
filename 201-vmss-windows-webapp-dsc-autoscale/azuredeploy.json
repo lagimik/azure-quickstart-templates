@@ -325,8 +325,7 @@
             ]
           },
           "extensionProfile": {
-            "apiVersion": "2017-03-30",
-
+            
             "extensions": [
               {
                 "name": "Microsoft.Powershell.DSC",
@@ -349,7 +348,26 @@
                     }
                   }
                 }
-              }
+              },{
+                "type": "extensions",
+                "name": "OMSExtension",
+                "apiVersion": "[variables('apiVersion')]",
+                "location": "[resourceGroup().location]",
+                
+                "properties": {
+                    "publisher": "Microsoft.EnterpriseCloud.Monitoring",
+                    "type": "MicrosoftMonitoringAgent",
+                    "typeHandlerVersion": "1.0",
+                    "autoUpgradeMinorVersion": true,
+                    "settings": {
+                        "workspaceId": "[parameters('omsWorkSpaceId')]"
+                    },
+                    "protectedSettings": {
+                        "workspaceKey": "[parameters('omsWorkSpaceKey')]"
+                    }
+                  }
+                }
+                
             ]
           }
         }
