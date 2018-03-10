@@ -352,7 +352,7 @@
                 "apiVersion": "[variables('apiVersion')]",
                 "location": "[resourceGroup().location]",
                 "dependsOn": [
-                    "[concat('Microsoft.Compute/virtualMachines/', variables('vmName'))]"
+                    "[concat('Microsoft.Compute/virtualMachineScaleSets/', parameters('vmssName'))]"
                 ],
                 "properties": {
                     "publisher": "Microsoft.EnterpriseCloud.Monitoring",
