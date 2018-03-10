@@ -328,6 +328,7 @@
             "extensions": [
               {
                 "name": "Microsoft.Powershell.DSC",
+                "apiVersion": "[variables('apiVersion')]",
                 "properties": {
                   "publisher": "Microsoft.Powershell",
                   "type": "DSC",
@@ -351,9 +352,7 @@
                 "name": "OMSExtension",
                 "apiVersion": "[variables('apiVersion')]",
                 "location": "[resourceGroup().location]",
-                "dependsOn": [
-                    "[concat('Microsoft.Compute/virtualMachineScaleSets/', parameters('vmssName'))]"
-                ],
+              
                 "properties": {
                     "publisher": "Microsoft.EnterpriseCloud.Monitoring",
                     "type": "MicrosoftMonitoringAgent",
