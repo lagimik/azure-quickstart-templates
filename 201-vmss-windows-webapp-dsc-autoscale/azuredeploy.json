@@ -325,6 +325,8 @@
             ]
           },
           "extensionProfile": {
+            "apiVersion": "[variables('apiVersion')]",
+
             "extensions": [
               {
                 "name": "Microsoft.Powershell.DSC",
