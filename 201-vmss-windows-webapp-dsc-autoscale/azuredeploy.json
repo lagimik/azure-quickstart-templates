@@ -38,6 +38,20 @@
       },
       "maxValue": 100
     },
+    "omsWorkspaceId": {
+      "type": "string",
+      "defaultValue": "",
+      "metadata": {
+        "description": "OMS Workspace ID"
+      }
+    },
+    "omsWorkspaceKey": {
+      "type": "string",
+      "defaultValue": "",
+      "metadata": {
+        "description": "OMS Workspace Key"
+      }
+    },
     "adminUsername": {
       "type": "string",
       "defaultValue": "vmssadmin",
