@@ -277,6 +277,11 @@
         "tier": "Standard",
         "capacity": "[parameters('instanceCount')]"
       },
+      "tags": {
+        "Tier": "Web",
+        "Environment": "Production",
+        "Billing": "RC456"
+      },
       "properties": {
         "overprovision": true,
         "upgradePolicy": {
@@ -284,6 +289,8 @@
         },
         "virtualMachineProfile": {
           
+        
+    
           "storageProfile": {
             "osDisk": {
               "caching": "ReadWrite",
