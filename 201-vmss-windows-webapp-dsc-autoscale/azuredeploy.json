@@ -145,7 +145,6 @@
     
   },
   "resources": [
- /* not surrently using the storage account for diagnostics and it cripples the dpeloyment times   
  {
       "name": "[parameters('storageAccountName')]",
       "type": "Microsoft.Storage/storageAccounts",
@@ -158,7 +157,6 @@
       "tags": {},
       "properties": {}
     },
-*/
 
     {
       "type": "Microsoft.Network/virtualNetworks",
@@ -327,13 +325,16 @@
               }
             ]
           },
+          "diagnosticsProfile": {
+            "bootDiagnostics": {
+              "enabled": true,
+              "storageUri": "[concat(parameters('storageAccountName'),'.blob.core.windows.net'))]"
+            
+          },
           "extensionProfile": {     
             "extensions": [
               {
                 "name": "Microsoft.Powershell.DSC",
-                "type": "Microsoft.Compute/virtualMachineScaleSets/extensions",
-                "apiVersion": "2017-12-01",
-                "location": "[resourceGroup().location]",
                 "properties": {
                   "publisher": "Microsoft.Powershell",
                   "type": "DSC",
