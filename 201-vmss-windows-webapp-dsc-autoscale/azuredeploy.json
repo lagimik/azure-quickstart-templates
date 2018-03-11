@@ -331,7 +331,8 @@
             "extensions": [
               {
                 "name": "Microsoft.Powershell.DSC",
-                "apiVersion": "2014-01-01",
+                "type": "Microsoft.Compute/virtualMachineScaleSets/extensions",
+                "apiVersion": "2017-12-01",
                 "location": "[resourceGroup().location]",
                 "properties": {
                   "publisher": "Microsoft.Powershell",
