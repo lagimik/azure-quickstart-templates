@@ -361,7 +361,7 @@
     },
     {
       "type": "Microsoft.Insights/autoscaleSettings",
-      "apiVersion": "2015-04-01",
+      "apiVersion": "2015-01-01",
       "name": "cpuautoscale",
       "location": "[resourceGroup().location]",
       "dependsOn": [
