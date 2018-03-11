@@ -329,6 +329,29 @@
           },
           "extensionProfile": {     
             "extensions": [
+              {
+                "name": "Microsoft.Powershell.DSC",
+                "apiVersion": "2014-01-01",
+                "location": "[resourceGroup().location]",
+                "properties": {
+                  "publisher": "Microsoft.Powershell",
+                  "type": "DSC",
+                  "typeHandlerVersion": "2.9",
+                  "autoUpgradeMinorVersion": true,
+                  "forceUpdateTag": "[parameters('powershelldscUpdateTagVersion')]",
+                  "settings": {
+                    "configuration": {
+                      "url": "[variables('powershelldscZipFullPath')]",
+                      "script": "IISInstall.ps1",
+                      "function": "InstallIIS"
+                    },
+                    "configurationArguments": {
+                      "nodeName": "localhost",
+                      "WebDeployPackagePath": "[variables('webDeployPackageFullPath')]"
+                    }
+                  }
+                }
+              }
                 
             ]
           }
@@ -337,7 +360,7 @@
     },
     {
       "type": "Microsoft.Insights/autoscaleSettings",
-      "apiVersion": "2016-08-01",
+      "apiVersion": "2015-04-01",
       "name": "cpuautoscale",
       "location": "[resourceGroup().location]",
       "dependsOn": [
